@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  Explore-GitHub-Actions:
+  Testing-GitHub-Actions:
     runs-on: ['self-hosted']
     steps:
       - uses: actions/checkout@v3
