@@ -1,0 +1,26 @@
+name: self-hosted runner on aws
+run-name: ${{ github.actor }} 🚀
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ['self-hosted']
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Node.js 16.19.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.19.0
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test # will run `yarn test` command
